@@ -1,0 +1,51 @@
+{
+  "name": "locastic/oib-validator",
+  "description": "Symfony person identification number validator based on constraints which are based on the Country regulation.",
+  "keywords": ["password", "validator", "symfony", "php", "dropbox", "oib"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Locastic",
+      "email": "info@locastic.com",
+      "homepage": "https://www.locastic.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "psr/container": "^1.0",
+    "psr/log": "^1.0",
+    "symfony/dependency-injection": "^3.3.6 || ^4.0",
+    "symfony/validator": "^3.3.6 || ^4.0"
+  },
+  "require-dev": {
+    "symfony/config": "^3.3.6 || ^4.0",
+    "symfony/console": "^3.3.6 || ^4.0",
+    "symfony/phpunit-bridge": "^3.3.6 || ^4.1",
+    "phpunit/phpunit": "^3.3.6 || ^4.1",
+    "php-http/httplug": "^1.1",
+    "guzzlehttp/psr7": "^1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Locastic\\Component\\OibValidator\\": "src/"
+    },
+    "exclude-from-classmap": ["test/"]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Locastic\\Component\\OibValidator\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  }
+}
