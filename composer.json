@@ -1,7 +1,7 @@
 {
   "name": "locastic/oib-validator",
   "description": "Symfony person identification number validator based on constraints which are based on the Country regulation.",
-  "keywords": ["password", "validator", "symfony", "php", "dropbox", "oib"],
+  "keywords": ["oib", "validator", "symfony", "php", "vat", "number", "croatia"],
   "type": "library",
   "license": "MIT",
   "authors": [
