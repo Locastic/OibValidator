@@ -8,12 +8,12 @@ class OibContentChecker implements OibContentCheckerInterface
 {
     const oibRequiredLength = 11;
 
-    public function hasOibValidLength(?string $oibValue): bool
+    public function hasOibValidLength(string $oibValue = null): bool
     {
         return ((strlen($oibValue) == self::oibRequiredLength) && is_numeric($oibValue));
     }
 
-    public function isCheckDigitValid(?string $oibValue, int $checkDigit): bool
+    public function isCheckDigitValid(string $oibValue = null, int $checkDigit): bool
     {
         return ($checkDigit == intval(substr($oibValue, 10, 1), 10));
     }
