@@ -24,7 +24,11 @@ class OibValidator extends ConstraintValidator
 
     public function validate($value, Constraint $constraint)
     {
-        if(!$this->getContentChecker()->hasOibValidLength($value)) {
+        if (null === $value || '' === $value) {
+            return;
+        }
+
+        if (!$this->getContentChecker()->hasOibValidLength($value)) {
             $this->context->buildViolation($constraint->lengthMessage)
                 ->addViolation();
             return;
@@ -34,7 +38,7 @@ class OibValidator extends ConstraintValidator
         $checkDigitResolver = new CheckDigitResolver($value);
         $checkDigit = $checkDigitResolver->resolve();
 
-        if(!$this->contentChecker->isCheckDigitValid($value, $checkDigit)) {
+        if (!$this->contentChecker->isCheckDigitValid($value, $checkDigit)) {
             $this->context->buildViolation($constraint->checkDigitMessage)
                 ->addViolation();
         }

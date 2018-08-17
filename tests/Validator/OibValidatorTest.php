@@ -11,16 +11,16 @@ use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 class OibValidatorTest extends ConstraintValidatorTestCase
 {
-    public function testNullIsNotValid()
+    public function testLegitOibIsValid()
     {
         $this->constraint = new Oib();
 
-        $this->validator->validate('', $this->constraint);
+        $this->validator->validate('40760464667', $this->constraint);
 
         /** @var ConstraintViolationListInterface $violations */
         $violations = $this->context->getViolations();
 
-        $this->assertEquals(1, \count($violations));
+        $this->assertEquals(0, \count($violations));
     }
 
     public function testFalseCheckDigitIsNotValid()
