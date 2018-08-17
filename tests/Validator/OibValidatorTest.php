@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Locastic\Component\OibValidator\Tests\Validator;
 
-use Locastic\Component\OibValidator\Utils\OibContentChecker;
 use Locastic\Component\OibValidator\Validator\Constraints\Oib;
 use Locastic\Component\OibValidator\Validator\Constraints\OibValidator;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
@@ -47,8 +46,6 @@ class OibValidatorTest extends ConstraintValidatorTestCase
 
     protected function createValidator()
     {
-        return new OibValidator(
-            new OibContentChecker()
-        );
+        return new OibValidator();
     }
 }

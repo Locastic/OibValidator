@@ -12,10 +12,9 @@
     }
   ],
   "require": {
-    "php": "^7.1",
+    "php": "^7.0",
     "psr/container": "^1.0",
     "psr/log": "^1.0",
-    "symfony/dependency-injection": "^3.3.6 || ^4.0",
     "symfony/validator": "^3.3.6 || ^4.0"
   },
   "require-dev": {
